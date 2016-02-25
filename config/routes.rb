@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'topics/about' => 'topics#about'
+
   resources :topics do
     member do
       post 'upvote'
