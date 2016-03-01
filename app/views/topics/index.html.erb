@@ -1,12 +1,13 @@
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-8 col-md-offset-2">
   <p id="notice"><%= notice %></p>
 
-  <h1>Listing Topics</h1>
+  <h1 class="text-center">Listing Topics</h1>
   <hr>
   <table class="table">
     <thead>
       <tr>
         <th>Title</th>
+        <th>Vote(s)</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -16,9 +17,9 @@
         <tr>
           <td><%= link_to topic.title, topic_path(topic) %></td>
           <td><%= pluralize(topic.votes_count, "vote") %></td>
-          <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
-          <td><%= button_to '-1', downvote_topic_path(topic), method: :post %></td>
-          <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '+1', upvote_topic_path(topic), method: :post, class: "btn btn-success btn-sm" %></td>
+          <td><%= link_to '-1', downvote_topic_path(topic), method: :post, class: "btn btn-warning btn-sm" %></td>
+          <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -26,7 +27,7 @@
 
   <br>
 
-  <%= link_to 'New Topic', new_topic_path %>
+  <%= link_to 'New Topic', new_topic_path, class: "btn btn-default btn-sm" %>
   <br>
-  <%= link_to 'About', topics_about_path %>
+  <%= link_to 'About', topics_about_path, class: "btn btn-default btn-sm" %>
 </div>
